@@ -489,13 +489,13 @@ Private MonthNames(1 To 12) As String
 Private Monthly(1 To 12) As New Months
 Private ThisDay As New WeekDays
 Private ThisDate As New TodayIs
-Private TodayIs As Double
+Private TodayIs As Long
 Private ThisYear As Integer
 
 Private Sub btnGetFirst_Click()
     ' GotoIs is a number that represents the first day of the month in the year
     ' that you want to find.
-    Dim GotoIs As Double
+    Dim GotoIs As Long
     
     ' Dumps the month number
     Dim getMonth As Integer
@@ -767,7 +767,7 @@ Private Sub SetToday(ByVal Direction As String)
     lblTodayIs.Caption = CStr(TodayIs)
 End Sub
 
-Public Function SetTodayIs(ByVal YR As Integer, ByVal MN As Integer, ByVal DY As Integer) As Double
+Public Function SetTodayIs(ByVal YR As Integer, ByVal MN As Integer, ByVal DY As Integer) As Long
     Dim tmpToday As String, tmpMN As String, tmpDY As String
 
     ' Month to string
@@ -786,7 +786,7 @@ Public Function SetTodayIs(ByVal YR As Integer, ByVal MN As Integer, ByVal DY As
 
     tmpToday = CStr(YR) & tmpMN & tmpDY
 
-    SetTodayIs = CDbl(tmpToday)
+    SetTodayIs = CLng(tmpToday)
 End Function
 
 Public Function GetMonthNumber(ByVal ChosenMonth As String) As Integer
